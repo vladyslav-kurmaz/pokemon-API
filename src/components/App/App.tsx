@@ -51,10 +51,10 @@ function App() {
     switch (step) {
       case 0:
         return (
-          <>
-            <p>Here you can choose pokemon for fight in the Battle Tower</p>
-            <Button text="Next" handle={() => setStap(step + 1)} />
-          </>
+          <div className="max-w-60 flex flex-col items-center">
+            <p className="text-center mb-4">Here you can choose pokemon for fight in the Battle Tower</p>
+            <Button text="Next" size="base" handle={() => setStap(step + 1)} />
+          </div>
         );
       case 1:
         return (
@@ -106,8 +106,8 @@ function App() {
       case 3:
         return (
           <div className="flex flex-col items-center flex-wrap">
-            <h2>You choese this pokemon</h2>
-            <ul className="flex">
+            <h2 className="mb-2">You choese this pokemon</h2>
+            <ul className="flex mb-2">
               {
                 listData.map(item => {
                   const {name, id, sprites} = item;
@@ -126,8 +126,8 @@ function App() {
             </ul>
 
             <div className="flex max-w-60 w-full justify-between">
-              <Button text='Back' handle={() => setStap(step - 1)} type='text'/>
-              <Button text='Try again' handle={() => {
+              <Button text='Back' size="base" handle={() => setStap(step - 1)} type='text'/>
+              <Button text='Try again' size="base" handle={() => {
                 setStap(0);
                 setName('');
                 setSurName('');
